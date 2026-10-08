@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="CWA Help Desk Appointment Form" />
+  <meta name="keywords" content="HTML, Form, Help Desk, Appointment" />
+  <meta name="author" content="Nguyen Le Anh" />
+  <title>CWA Help Desk Appointment</title>
+</head>
+<body>
+<!-- Logo gắn liên kết (hyperlink) tới http://www.swin.edu.au -->
+ <p>
+    <a href="http://www.swin.edu.au">
+      <img src="images/logo.png" alt="Swinburne Logo" />
+    </a>
+  </p>
+<!-- Heading 1 -->
+<h1>CWA Help Desk Appointment</h1>
+<!-- Paragraphs mô tả (ngày và giờ, thứ, địa điểm) -->
+ <p>The Help Desk is located in ATC620. Open 10:30 to 19:00 Monday to Friday</p>
+  <p>Check Blackboard for when CWA tutors will be there.</p>
+  <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+ <!-- Fieldset cho chi tiết học sinh -->
+    <fieldset>
+      <legend>Student details</legend>
+      <!-- Student ID: Bắt buộc, từ 7 đến 10 chữ số -->
+    <p>
+        <label for="sid">Student ID</label>
+        <input type="text" name="sid" id="sid" required pattern="{7,10}" />
+             
+    </p>
+<!-- Given Name & Family Name: Bắt buộc, tối đa 15 ký tự, chỉ chứa chữ cái -->
+    <p>
+        <label for="gname">Given Name</label>
+        <input type="text" name="gname" id="gname" maxlength="15" required="required" pattern="[A-Za-z]+" />
+
+        <label for="fname">Family Name</label>
+        <input type="text" name="fname" id="fname" maxlength="15" required="required" pattern="[A-Za-z]+" />
+      </p>
+    </fieldset>
+<!-- Field 2 -->
+<!-- Your Unit (Ngành học)-->    
+      <fieldset>
+        <legend>Your Unit</legend>
+        <!-- Radio buttons: Đặt ít nhất một nút có required="required" -->
+        <p>
+            <input type="radio" name="unit" id="COS10011" value="COS10011" required="required" />
+            <label for="COS10011">COS10011</label>
+
+            <input type="radio" name="unit" id="COS60004" value="COS60004" />
+            <label for="COS60004">COS60004</label>
+
+            <input type="radio" name="unit" id="COS60007" value="COS60007" />
+            <label for="COS60007">COS60007</label>
+        </p>
+<!-- Radio buttons: Đặt ít nhất một nút có required="required" -->
+        <p>
+             <label for="tutor">Your Tutor</label>
+            <select name="tutor" id="tutor" required="required">
+                <option value="">Please select</option>
+                <option value="Tutor1">Tutor 1</option>
+                <option value="Tutor2">Tutor 2</option>
+                <option value="Tutor3">Tutor 3</option>
+            </select>
+        </p>
+      </fieldset>
+
+<!-- Field 3 issues-->
+     <fieldset>
+        <legend>Issues</legend>
+        <!-- Checkboxes: Đặt ít nhất một checkbox có required="required" -->
+        <p>
+            <input type="checkbox" name="html" id="HTML" value="HTML"    />
+            <label for="html">HTML</label>
+
+            <input type="checkbox" name="css" id="CSS" value="CSS" />
+            <label for="css">CSS</label>
+
+            <input type="checkbox" name="javascript" id="JavaScript" value="JavaScript" />
+            <label for="javascript">JavaScript</label>
+           
+            <input type="checkbox" name="php" id="PHP" value="PHP"  />
+            <label for="php">PHP</label>
+
+             <input type="checkbox" name="mysql" id="MySQL" value="MySQL"  />
+            <label for="mysql">MySQL</label>
+ <!-- Textarea mô tả vấn đề với placeholder -->
+        </p>
+        <!-- Textarea mô tả vấn đề với placeholder -->
+        <label for="description">Description of Issue</label><br />
+        <textarea id="description" name="description" rows="5" cols="40" placeholder="Write description of your problem here..."></textarea>
+      </p>
+    </fieldset>
+<!-- Field 4 Ngày và giờ-->
+    <fieldset>
+        <legend>Preferred Date/Time</legend>
+        <!-- Date: Bắt buộc, không được chọn ngày trong quá khứ -->
+        <p>
+            <label for="date">Date</label>
+           <input type="text" name="date" id="date" placeholder="dd/mm/yyyy" pattern="\d{2}/\d{2}/\d{4}" />
+            
+        </p>
+        <!-- Time: Bắt buộc, chỉ được chọn giờ từ 10:30 đến 19:00 -->
+        <p>
+            <label for="time">Time</label>
+           <input type="text" name="time" id="time" placeholder="00:00" pattern="\d{2}:\d{2}" />
+        </p>
+    </fieldset>
+    <!-- Nút bấm -->
+    <p>
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+    </p>
+
+    
+    
+
+
+   
+
+
+   
+  
+
+
+</body>
+</html>
